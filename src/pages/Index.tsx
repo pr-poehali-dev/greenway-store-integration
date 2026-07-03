@@ -396,6 +396,35 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Shop CTA */}
+      <section className="container pb-6">
+        <div className="rounded-3xl border border-border bg-card p-8 text-center md:p-12">
+          <span className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-primary">
+            <Icon name="Store" size={26} />
+          </span>
+          <h2 className="font-display text-3xl font-bold text-primary md:text-4xl">Готовы выбрать товар?</h2>
+          <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
+            Переходите в официальный магазин Greenway, выбирайте товары и заказывайте самостоятельно.
+            Если возникнут вопросы — пишите мне в WhatsApp, всегда помогу разобраться.
+          </p>
+          <Button size="lg" className="mt-6 rounded-full px-8" asChild>
+            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">
+              <Icon name="ExternalLink" size={18} />
+              Перейти в официальный магазин
+            </a>
+          </Button>
+
+          <div className="mx-auto mt-8 flex max-w-xl items-start gap-3 rounded-2xl bg-accent/10 p-5 text-left">
+            <Icon name="AlertTriangle" size={20} className="mt-0.5 shrink-0 text-primary" />
+            <p className="text-sm text-muted-foreground">
+              <span className="font-semibold text-primary">Важно перед заказом:</span> внимательно читайте описание и способ применения каждого товара на странице официального магазина.
+              Некоторые продукты, например витамины и БАДы, нужно принимать по назначению врача — убедитесь, что они действительно вам нужны.
+              Избыток витаминов и активных веществ может быть вреден так же, как и их нехватка.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Contacts */}
       <section id="contacts" className="container py-16 md:py-24">
         <div className="flex flex-col items-center gap-8 rounded-3xl bg-primary p-8 text-center text-primary-foreground md:p-16">
@@ -426,6 +455,17 @@ const Index = () => {
           <span>© 2026 Greenway. Натуральные товары для жизни.</span>
         </div>
       </footer>
+
+      {/* Floating WhatsApp button */}
+      <a
+        href="https://wa.me/79965900246"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Написать в WhatsApp"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:scale-110"
+      >
+        <Icon name="MessageCircle" size={28} />
+      </a>
     </div>
   );
 };
