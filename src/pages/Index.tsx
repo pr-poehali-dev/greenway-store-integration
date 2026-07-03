@@ -9,6 +9,11 @@ import { Checkbox } from '@/components/ui/checkbox';
 const HERO_IMG = 'https://cdn.poehali.dev/projects/5106c28a-a11b-4fed-9e42-b02f4ac46b89/bucket/517474ad-7621-4a6a-930c-06bececd2073.png';
 const SHOP_URL = 'https://greenwayglobal.com/shop?gw=v1yaMn6Ip4';
 
+const IMG_CLEANING = 'https://cdn.poehali.dev/projects/5106c28a-a11b-4fed-9e42-b02f4ac46b89/files/340626e1-2008-4884-9b9d-73464212b392.jpg';
+const IMG_SKINCARE = 'https://cdn.poehali.dev/projects/5106c28a-a11b-4fed-9e42-b02f4ac46b89/files/bfd0477a-ffd6-442b-a7d6-63cd1322165b.jpg';
+const IMG_TEA = 'https://cdn.poehali.dev/projects/5106c28a-a11b-4fed-9e42-b02f4ac46b89/files/4b7860ef-322f-4bb7-8aa7-d275a7380a33.jpg';
+const IMG_SUPERFOOD = 'https://cdn.poehali.dev/projects/5106c28a-a11b-4fed-9e42-b02f4ac46b89/files/562ebb1e-e0ac-429f-b68a-f2ac5eae663e.jpg';
+
 const CATEGORIES = ['Уборка', 'Красота', 'Здоровье', 'Питание'] as const;
 const FEATURES = ['Без химии', 'Веган', 'Эко-упаковка', 'Гипоаллергенно'] as const;
 
@@ -20,24 +25,24 @@ type Product = {
   article: string;
   category: string;
   features: string[];
-  emoji: string;
+  img: string;
 };
 
 const PRODUCTS: Product[] = [
-  { id: 1, name: 'BioTrim Laundry Gel', desc: 'Концентрированный гель для стирки на растительной основе. Бережная стирка без фосфатов.', price: 990, article: 'GW-01001', category: 'Уборка', features: ['Без химии', 'Веган', 'Эко-упаковка'], emoji: '🧴' },
-  { id: 2, name: 'BioSoap Natural Dish Soap', desc: 'Натуральное средство для мытья посуды. Отмывает жир и безопасно для кожи рук.', price: 640, article: 'GW-01002', category: 'Уборка', features: ['Без химии', 'Гипоаллергенно'], emoji: '🫧' },
-  { id: 3, name: 'Eco Soda for Home', desc: 'Универсальная сода для дома: чистит, удаляет запахи и смягчает воду.', price: 380, article: 'GW-01003', category: 'Уборка', features: ['Эко-упаковка', 'Веган'], emoji: '🧂' },
-  { id: 4, name: 'Home G9 Eco Detergent', desc: 'Универсальное чистящее средство на минералах. Мощная чистота без компромиссов.', price: 1290, article: 'GW-01004', category: 'Уборка', features: ['Без химии', 'Эко-упаковка'], emoji: '🧼' },
-  { id: 5, name: 'Nice Eco Soap', desc: 'Натуральное твёрдое мыло для рук и тела с растительными маслами.', price: 320, article: 'GW-01005', category: 'Красота', features: ['Без химии', 'Гипоаллергенно', 'Веган'], emoji: '🧼' },
-  { id: 6, name: 'Крем-баттер для тела', desc: 'Питание и увлажнение кожи на растительных маслах. Мягкость на весь день.', price: 1290, article: 'GW-02001', category: 'Красота', features: ['Без химии', 'Гипоаллергенно'], emoji: '🧴' },
-  { id: 7, name: 'Фиточай «Баланс»', desc: 'Травяной сбор для очищения и лёгкости каждый день.', price: 890, article: 'GW-03001', category: 'Здоровье', features: ['Без химии', 'Веган'], emoji: '🍵' },
-  { id: 8, name: 'Смесь суперфудов', desc: 'Спирулина, ягоды годжи и семена чиа для энергии и иммунитета.', price: 1480, article: 'GW-04001', category: 'Питание', features: ['Веган', 'Гипоаллергенно'], emoji: '🫐' },
+  { id: 1, name: 'BioTrim Laundry Gel', desc: 'Концентрированный гель для стирки на растительной основе. Бережная стирка без фосфатов.', price: 990, article: 'GW-01001', category: 'Уборка', features: ['Без химии', 'Веган', 'Эко-упаковка'], img: IMG_CLEANING },
+  { id: 2, name: 'BioSoap Natural Dish Soap', desc: 'Натуральное средство для мытья посуды. Отмывает жир и безопасно для кожи рук.', price: 640, article: 'GW-01002', category: 'Уборка', features: ['Без химии', 'Гипоаллергенно'], img: IMG_CLEANING },
+  { id: 3, name: 'Eco Soda for Home', desc: 'Универсальная сода для дома: чистит, удаляет запахи и смягчает воду.', price: 380, article: 'GW-01003', category: 'Уборка', features: ['Эко-упаковка', 'Веган'], img: IMG_CLEANING },
+  { id: 4, name: 'Home G9 Eco Detergent', desc: 'Универсальное чистящее средство на минералах. Мощная чистота без компромиссов.', price: 1290, article: 'GW-01004', category: 'Уборка', features: ['Без химии', 'Эко-упаковка'], img: IMG_CLEANING },
+  { id: 5, name: 'Nice Eco Soap', desc: 'Натуральное твёрдое мыло для рук и тела с растительными маслами.', price: 320, article: 'GW-01005', category: 'Красота', features: ['Без химии', 'Гипоаллергенно', 'Веган'], img: IMG_SKINCARE },
+  { id: 6, name: 'Крем-баттер для тела', desc: 'Питание и увлажнение кожи на растительных маслах. Мягкость на весь день.', price: 1290, article: 'GW-02001', category: 'Красота', features: ['Без химии', 'Гипоаллергенно'], img: IMG_SKINCARE },
+  { id: 7, name: 'Фиточай «Баланс»', desc: 'Травяной сбор для очищения и лёгкости каждый день.', price: 890, article: 'GW-03001', category: 'Здоровье', features: ['Без химии', 'Веган'], img: IMG_TEA },
+  { id: 8, name: 'Смесь суперфудов', desc: 'Спирулина, ягоды годжи и семена чиа для энергии и иммунитета.', price: 1480, article: 'GW-04001', category: 'Питание', features: ['Веган', 'Гипоаллергенно'], img: IMG_SUPERFOOD },
 ];
 
 const BLOG = [
-  { tag: 'Здоровье', title: '5 привычек для чистого тела', read: '4 мин', emoji: '🌿' },
-  { tag: 'Дом', title: 'Как перейти на эко-быт без стресса', read: '6 мин', emoji: '🏡' },
-  { tag: 'Красота', title: 'Растительные масла в уходе за кожей', read: '5 мин', emoji: '🌸' },
+  { tag: 'Здоровье', title: '5 привычек для чистого тела', read: '4 мин', img: IMG_TEA },
+  { tag: 'Дом', title: 'Как перейти на эко-быт без стресса', read: '6 мин', img: IMG_CLEANING },
+  { tag: 'Красота', title: 'Растительные масла в уходе за кожей', read: '5 мин', img: IMG_SKINCARE },
 ];
 
 const Index = () => {
@@ -100,8 +105,9 @@ const Index = () => {
       <section className="relative overflow-hidden">
         <div className="container grid items-center gap-10 py-16 md:grid-cols-2 md:py-24">
           <div className="animate-fade-up">
-            <Badge className="mb-5 rounded-full bg-accent px-4 py-1.5 text-accent-foreground hover:bg-accent">
-              🌍 Забота о вас и планете
+            <Badge className="mb-5 flex w-fit items-center gap-1.5 rounded-full bg-accent px-4 py-1.5 text-accent-foreground hover:bg-accent">
+              <Icon name="Globe2" size={14} />
+              Забота о вас и планете
             </Badge>
             <h1 className="font-display text-5xl font-bold leading-[1.05] text-primary md:text-7xl">
               Натуральные товары для жизни в гармонии
@@ -210,8 +216,12 @@ const Index = () => {
               <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {filtered.map((p) => (
                   <Card key={p.id} className="group flex flex-col overflow-hidden rounded-2xl border-border hover-scale">
-                    <div className="flex aspect-square items-center justify-center bg-secondary text-7xl">
-                      {p.emoji}
+                    <div className="aspect-square overflow-hidden bg-secondary">
+                      <img
+                        src={p.img}
+                        alt={p.name}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                     </div>
                     <div className="flex flex-1 flex-col p-5">
                       <Badge variant="secondary" className="mb-2 w-fit rounded-full text-xs">{p.category}</Badge>
@@ -260,7 +270,9 @@ const Index = () => {
           <div className="grid gap-6 md:grid-cols-3">
             {BLOG.map((b) => (
               <Card key={b.title} className="group cursor-pointer overflow-hidden rounded-2xl border-border hover-scale">
-                <div className="flex h-40 items-center justify-center bg-primary/5 text-6xl">{b.emoji}</div>
+                <div className="h-44 overflow-hidden">
+                  <img src={b.img} alt={b.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
                 <div className="p-6">
                   <div className="mb-2 flex items-center gap-3 text-xs text-muted-foreground">
                     <Badge variant="secondary" className="rounded-full">{b.tag}</Badge>
