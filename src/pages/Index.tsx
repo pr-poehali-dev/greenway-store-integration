@@ -398,45 +398,22 @@ const Index = () => {
 
       {/* Contacts */}
       <section id="contacts" className="container py-16 md:py-24">
-        <div className="grid gap-10 rounded-3xl bg-primary p-8 text-primary-foreground md:grid-cols-2 md:p-14">
+        <div className="flex flex-col items-center gap-8 rounded-3xl bg-primary p-8 text-center text-primary-foreground md:p-16">
+          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-foreground/10">
+            <Icon name="MessageCircle" size={30} />
+          </span>
           <div>
             <h2 className="font-display text-4xl font-bold md:text-5xl">Свяжитесь с нами</h2>
-            <p className="mt-4 text-primary-foreground/80">
-              Есть вопросы о товарах или доставке? Мы всегда на связи и рады помочь.
+            <p className="mx-auto mt-4 max-w-md text-primary-foreground/80">
+              Есть вопросы о товарах или доставке? Напишите нам в WhatsApp — ответим быстро и с удовольствием поможем.
             </p>
-            <div className="mt-8 space-y-4">
-              {[
-                ['Mail', 'hello@greenway.ru'],
-                ['Phone', '+7 (800) 000-00-00'],
-                ['MapPin', 'Москва, ул. Зелёная, 1'],
-              ].map(([icon, text]) => (
-                <div key={text} className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-foreground/10">
-                    <Icon name={icon} size={18} />
-                  </span>
-                  {text}
-                </div>
-              ))}
-            </div>
-            <div className="mt-8 flex gap-3">
-              {['Instagram', 'Send', 'Music'].map((i) => (
-                <a key={i} href="#" className="flex h-11 w-11 items-center justify-center rounded-full bg-primary-foreground/10 transition-colors hover:bg-primary-foreground/20">
-                  <Icon name={i} size={18} />
-                </a>
-              ))}
-            </div>
           </div>
-          <div className="rounded-2xl bg-primary-foreground/10 p-8">
-            <h3 className="font-display text-2xl font-semibold">Напишите нам</h3>
-            <div className="mt-5 space-y-4">
-              <input placeholder="Ваше имя" className="w-full rounded-xl border border-primary-foreground/20 bg-primary-foreground/5 px-4 py-3 text-sm placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-accent" />
-              <input placeholder="Email" className="w-full rounded-xl border border-primary-foreground/20 bg-primary-foreground/5 px-4 py-3 text-sm placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-accent" />
-              <textarea placeholder="Сообщение" rows={4} className="w-full resize-none rounded-xl border border-primary-foreground/20 bg-primary-foreground/5 px-4 py-3 text-sm placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-accent" />
-              <Button size="lg" className="w-full rounded-full bg-accent text-accent-foreground hover:bg-accent/90">
-                Отправить сообщение
-              </Button>
-            </div>
-          </div>
+          <Button size="lg" className="rounded-full bg-accent px-8 text-accent-foreground hover:bg-accent/90" asChild>
+            <a href="https://wa.me/79965900246" target="_blank" rel="noopener noreferrer">
+              <Icon name="Phone" size={18} />
+              8 996 590-02-46
+            </a>
+          </Button>
         </div>
       </section>
 
