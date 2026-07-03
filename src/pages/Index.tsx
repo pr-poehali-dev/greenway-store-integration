@@ -83,6 +83,7 @@ const Index = () => {
           <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
             <a href="#" className="transition-colors hover:text-primary">Главная</a>
             <a href="#catalog" className="transition-colors hover:text-primary">Каталог</a>
+            <a href="#delivery" className="transition-colors hover:text-primary">Доставка</a>
             <a href="#blog" className="transition-colors hover:text-primary">Блог</a>
             <a href="#contacts" className="transition-colors hover:text-primary">Контакты</a>
           </nav>
@@ -273,6 +274,125 @@ const Index = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Delivery */}
+      <section id="delivery" className="container py-16 md:py-24">
+        <div className="mb-10 text-center">
+          <h2 className="font-display text-4xl font-bold text-primary md:text-5xl">Доставка и заказ</h2>
+          <p className="mt-3 text-muted-foreground">Заказываешь онлайн — получаешь у себя в городе</p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <Card className="rounded-2xl border-border p-7">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-secondary text-primary">
+                <Icon name="Package" size={20} />
+              </span>
+              <h3 className="font-display text-2xl font-semibold text-primary">Заказ до 3000 ₽</h3>
+            </div>
+            <ul className="space-y-2.5 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <Icon name="Check" size={16} className="mt-0.5 shrink-0 text-primary" />
+                Доставка Почтой России
+              </li>
+              <li className="flex items-start gap-2">
+                <Icon name="Check" size={16} className="mt-0.5 shrink-0 text-primary" />
+                Доставку оплачиваешь при получении
+              </li>
+            </ul>
+          </Card>
+
+          <Card className="relative overflow-hidden rounded-2xl border-accent/40 p-7">
+            <Badge className="absolute right-5 top-5 rounded-full bg-accent text-accent-foreground hover:bg-accent">Выгоднее</Badge>
+            <div className="mb-4 flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent/20 text-primary">
+                <Icon name="Gift" size={20} />
+              </span>
+              <h3 className="font-display text-2xl font-semibold text-primary">Заказ от 3000 ₽</h3>
+            </div>
+            <ul className="space-y-2.5 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <Icon name="Check" size={16} className="mt-0.5 shrink-0 text-primary" />
+                Почта России
+              </li>
+              <li className="flex items-start gap-2">
+                <Icon name="Check" size={16} className="mt-0.5 shrink-0 text-primary" />
+                Курьер до двери
+              </li>
+              <li className="flex items-start gap-2">
+                <Icon name="Check" size={16} className="mt-0.5 shrink-0 text-primary" />
+                Любой ПВЗ, в том числе «Пятёрочка»
+              </li>
+              <li className="flex items-start gap-2">
+                <Icon name="Check" size={16} className="mt-0.5 shrink-0 text-primary" />
+                Доставка включена в стоимость
+              </li>
+            </ul>
+          </Card>
+        </div>
+
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <Card className="rounded-2xl border-border p-7">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-secondary text-primary">
+                <Icon name="ListChecks" size={20} />
+              </span>
+              <h3 className="font-display text-2xl font-semibold text-primary">Как оформить заказ</h3>
+            </div>
+            <ol className="space-y-2.5 text-sm text-muted-foreground">
+              {[
+                'Заходи в магазин по ссылке ниже',
+                'Выбирай товары и добавляй в корзину',
+                'При оформлении указывай точный адрес — улица, дом, квартира, индекс',
+                'Магазин работает как обычный маркетплейс — заказываешь онлайн, получаешь у себя в городе',
+              ].map((step, i) => (
+                <li key={step} className="flex items-start gap-2.5">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">{i + 1}</span>
+                  {step}
+                </li>
+              ))}
+            </ol>
+            <Button className="mt-5 w-full rounded-full" asChild>
+              <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">
+                Оформить заказ
+                <Icon name="ArrowRight" size={16} />
+              </a>
+            </Button>
+          </Card>
+
+          <Card className="rounded-2xl border-border p-7">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-secondary text-primary">
+                <Icon name="CreditCard" size={20} />
+              </span>
+              <h3 className="font-display text-2xl font-semibold text-primary">Оплата</h3>
+            </div>
+            <p className="text-sm text-muted-foreground">Банковской картой онлайн при оформлении заказа.</p>
+
+            <div className="mt-6 flex items-start gap-3 rounded-xl bg-secondary/60 p-4 text-sm">
+              <Icon name="AlertTriangle" size={18} className="mt-0.5 shrink-0 text-accent-foreground" />
+              <span className="text-muted-foreground">
+                Проверяй правильность адреса перед отправкой заказа — неверный адрес может привести к задержке или потере посылки.
+              </span>
+            </div>
+
+            <a
+              href="https://t.me/Lybana21"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 flex items-center gap-3 rounded-xl border border-border p-4 transition-colors hover:bg-secondary/60"
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <Icon name="Send" size={18} />
+              </span>
+              <div className="text-sm">
+                <div className="font-semibold">Вопросы по доставке</div>
+                <div className="text-muted-foreground">Написать в Telegram: @Lybana21</div>
+              </div>
+            </a>
+          </Card>
         </div>
       </section>
 
