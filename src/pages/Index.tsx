@@ -6,9 +6,10 @@ import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
 import { Checkbox } from '@/components/ui/checkbox';
 
-const HERO_IMG = 'https://cdn.poehali.dev/projects/5106c28a-a11b-4fed-9e42-b02f4ac46b89/files/d417d359-ea1d-4005-af52-e4e1ae4bade4.jpg';
+const HERO_IMG = 'https://cdn.poehali.dev/projects/5106c28a-a11b-4fed-9e42-b02f4ac46b89/bucket/517474ad-7621-4a6a-930c-06bececd2073.png';
+const SHOP_URL = 'https://greenwayglobal.com/shop?gw=v1yaMn6Ip4';
 
-const CATEGORIES = ['Здоровье', 'Красота', 'Дом', 'Питание'] as const;
+const CATEGORIES = ['Уборка', 'Красота', 'Здоровье', 'Питание'] as const;
 const FEATURES = ['Без химии', 'Веган', 'Эко-упаковка', 'Гипоаллергенно'] as const;
 
 type Product = {
@@ -16,20 +17,21 @@ type Product = {
   name: string;
   desc: string;
   price: number;
+  article: string;
   category: string;
   features: string[];
   emoji: string;
 };
 
 const PRODUCTS: Product[] = [
-  { id: 1, name: 'Фиточай «Баланс»', desc: 'Травяной сбор для очищения и лёгкости каждый день.', price: 890, category: 'Здоровье', features: ['Без химии', 'Веган'], emoji: '🍵' },
-  { id: 2, name: 'Крем-баттер для тела', desc: 'Питание и увлажнение на растительных маслах.', price: 1290, category: 'Красота', features: ['Без химии', 'Гипоаллергенно'], emoji: '🧴' },
-  { id: 3, name: 'Эко-гель для посуды', desc: 'Отмывает жир и безопасен для кожи рук и природы.', price: 640, category: 'Дом', features: ['Эко-упаковка', 'Веган'], emoji: '🫧' },
-  { id: 4, name: 'Протеин растительный', desc: 'Гороховый белок для энергии и восстановления.', price: 2190, category: 'Питание', features: ['Веган', 'Без химии'], emoji: '🌱' },
-  { id: 5, name: 'Сыворотка для лица', desc: 'Сияние кожи с экстрактом зелёного чая.', price: 1650, category: 'Красота', features: ['Гипоаллергенно', 'Эко-упаковка'], emoji: '💧' },
-  { id: 6, name: 'Витамин D3 + K2', desc: 'Поддержка иммунитета и крепких костей.', price: 1120, category: 'Здоровье', features: ['Веган'], emoji: '☀️' },
-  { id: 7, name: 'Стиральный порошок эко', desc: 'Бережная стирка без фосфатов и отдушек.', price: 780, category: 'Дом', features: ['Эко-упаковка', 'Без химии'], emoji: '🧺' },
-  { id: 8, name: 'Смесь суперфудов', desc: 'Спирулина, ягоды годжи и семена чиа.', price: 1480, category: 'Питание', features: ['Веган', 'Гипоаллергенно'], emoji: '🫐' },
+  { id: 1, name: 'BioTrim Laundry Gel', desc: 'Концентрированный гель для стирки на растительной основе. Бережная стирка без фосфатов.', price: 990, article: 'GW-01001', category: 'Уборка', features: ['Без химии', 'Веган', 'Эко-упаковка'], emoji: '🧴' },
+  { id: 2, name: 'BioSoap Natural Dish Soap', desc: 'Натуральное средство для мытья посуды. Отмывает жир и безопасно для кожи рук.', price: 640, article: 'GW-01002', category: 'Уборка', features: ['Без химии', 'Гипоаллергенно'], emoji: '🫧' },
+  { id: 3, name: 'Eco Soda for Home', desc: 'Универсальная сода для дома: чистит, удаляет запахи и смягчает воду.', price: 380, article: 'GW-01003', category: 'Уборка', features: ['Эко-упаковка', 'Веган'], emoji: '🧂' },
+  { id: 4, name: 'Home G9 Eco Detergent', desc: 'Универсальное чистящее средство на минералах. Мощная чистота без компромиссов.', price: 1290, article: 'GW-01004', category: 'Уборка', features: ['Без химии', 'Эко-упаковка'], emoji: '🧼' },
+  { id: 5, name: 'Nice Eco Soap', desc: 'Натуральное твёрдое мыло для рук и тела с растительными маслами.', price: 320, article: 'GW-01005', category: 'Красота', features: ['Без химии', 'Гипоаллергенно', 'Веган'], emoji: '🧼' },
+  { id: 6, name: 'Крем-баттер для тела', desc: 'Питание и увлажнение кожи на растительных маслах. Мягкость на весь день.', price: 1290, article: 'GW-02001', category: 'Красота', features: ['Без химии', 'Гипоаллергенно'], emoji: '🧴' },
+  { id: 7, name: 'Фиточай «Баланс»', desc: 'Травяной сбор для очищения и лёгкости каждый день.', price: 890, article: 'GW-03001', category: 'Здоровье', features: ['Без химии', 'Веган'], emoji: '🍵' },
+  { id: 8, name: 'Смесь суперфудов', desc: 'Спирулина, ягоды годжи и семена чиа для энергии и иммунитета.', price: 1480, article: 'GW-04001', category: 'Питание', features: ['Веган', 'Гипоаллергенно'], emoji: '🫐' },
 ];
 
 const BLOG = [
@@ -42,9 +44,16 @@ const Index = () => {
   const [activeCat, setActiveCat] = useState<string[]>([]);
   const [activeFeat, setActiveFeat] = useState<string[]>([]);
   const [maxPrice, setMaxPrice] = useState(2500);
+  const [copied, setCopied] = useState<string | null>(null);
 
   const toggle = (list: string[], set: (v: string[]) => void, val: string) =>
     set(list.includes(val) ? list.filter((x) => x !== val) : [...list, val]);
+
+  const copyArticle = (article: string) => {
+    navigator.clipboard?.writeText(article);
+    setCopied(article);
+    setTimeout(() => setCopied(null), 1500);
+  };
 
   const filtered = useMemo(
     () =>
@@ -77,9 +86,11 @@ const Index = () => {
             <a href="#blog" className="transition-colors hover:text-primary">Блог</a>
             <a href="#contacts" className="transition-colors hover:text-primary">Контакты</a>
           </nav>
-          <Button size="sm" className="rounded-full">
-            <Icon name="ShoppingBag" size={16} />
-            Корзина
+          <Button size="sm" className="rounded-full" asChild>
+            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">
+              <Icon name="ShoppingBag" size={16} />
+              В магазин
+            </a>
           </Button>
         </div>
       </header>
@@ -119,18 +130,9 @@ const Index = () => {
             <div className="absolute -inset-4 rounded-[2rem] bg-accent/20 blur-2xl" />
             <img
               src={HERO_IMG}
-              alt="Натуральные эко-товары Greenway"
-              className="relative aspect-square w-full rounded-[2rem] object-cover shadow-2xl"
+              alt="Greenway — выбор в пользу будущего: до и после"
+              className="relative w-full rounded-[2rem] object-cover shadow-2xl"
             />
-            <div className="absolute bottom-5 left-5 flex items-center gap-3 rounded-2xl bg-background/90 px-4 py-3 shadow-lg backdrop-blur">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <Icon name="ShieldCheck" size={20} />
-              </span>
-              <div className="text-sm">
-                <div className="font-semibold">Сертифицировано</div>
-                <div className="text-muted-foreground">Эко-стандарт качества</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -214,6 +216,16 @@ const Index = () => {
                       <Badge variant="secondary" className="mb-2 w-fit rounded-full text-xs">{p.category}</Badge>
                       <h3 className="font-display text-2xl font-semibold leading-tight text-primary">{p.name}</h3>
                       <p className="mt-1.5 flex-1 text-sm text-muted-foreground">{p.desc}</p>
+
+                      <button
+                        onClick={() => copyArticle(p.article)}
+                        className="mt-3 flex items-center gap-2 self-start rounded-lg border border-dashed border-primary/30 bg-muted px-2.5 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-primary/5"
+                      >
+                        <Icon name="Barcode" size={14} />
+                        Артикул: {p.article}
+                        <Icon name={copied === p.article ? 'Check' : 'Copy'} size={13} className={copied === p.article ? 'text-green-600' : 'opacity-60'} />
+                      </button>
+
                       <div className="mt-3 flex flex-wrap gap-1.5">
                         {p.features.map((f) => (
                           <span key={f} className="rounded-full bg-accent/20 px-2.5 py-0.5 text-xs text-primary">{f}</span>
@@ -221,9 +233,11 @@ const Index = () => {
                       </div>
                       <div className="mt-4 flex items-center justify-between">
                         <span className="font-display text-2xl font-bold text-primary">{p.price} ₽</span>
-                        <Button size="sm" className="rounded-full">
-                          <Icon name="Plus" size={16} />
-                          В корзину
+                        <Button size="sm" className="rounded-full" asChild>
+                          <a href={SHOP_URL} target="_blank" rel="noopener noreferrer">
+                            <Icon name="ExternalLink" size={16} />
+                            Купить
+                          </a>
                         </Button>
                       </div>
                     </div>
